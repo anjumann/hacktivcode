@@ -1,5 +1,6 @@
 import React from 'react'
-import {AiOutlineEnter} from 'react-icons/ai'
+import { AiOutlineEnter } from 'react-icons/ai'
+import { BsChatRightDots } from 'react-icons/bs'
 
 const Demo = () => {
     return (
@@ -7,17 +8,21 @@ const Demo = () => {
             <div className="flex flex-col w-full gap-2">
                 <form
                     className="relative flex justify-center items-center"
-                    // onSubmit={handleSubmit}
+                // onSubmit={handleSubmit}
                 >
                     {/* <img
                         src={linkIcon}
                         alt="link_icon"
                         className="absolute left-0 my-2 ml-3 w-5"
                     /> */}
+                    <BsChatRightDots
+                        className="absolute left-0 my-2 ml-3 w-5"
+                    />
 
-                    <input
+
+                    <textarea
                         type="url"
-                        placeholder="Enter a URL"
+                        placeholder="Enter the problem statement here..."
                         // value={article.url}
                         // onChange={(e) => setArticle({ ...article, url: e.target.value })}
                         required
@@ -25,7 +30,7 @@ const Demo = () => {
                     />
                     <button
                         type="submit"
-                        className="submit_btn  peer-focus:border-gray-700 peer-focus:text-gray-700"
+                        className="submit_btn  peer-focus:border-gray-700 peer-focus:text-gray-700 h-fit py-3 align-middle"
                     >
                         <AiOutlineEnter className="inline " />
                     </button>

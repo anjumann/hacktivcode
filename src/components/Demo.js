@@ -1,7 +1,7 @@
 import React from 'react'
 import { AiOutlineEnter } from 'react-icons/ai'
 import { BsChatRightDots } from 'react-icons/bs'
-import Mdx from './mdx'
+import Response from './Response'
 
 const Demo = () => {
     return (
@@ -84,8 +84,7 @@ const Demo = () => {
                         </div>
                     )
                 )} */}
-
-                <Mdx />
+                <Response/>
             </div>
         </section>
     )

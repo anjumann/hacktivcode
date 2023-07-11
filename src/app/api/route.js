@@ -16,7 +16,7 @@ export async function POST(request) {
         const completion = await openai.createChatCompletion({
             model: "gpt-3.5-turbo",
             messages: [
-                { role: "system", content: "You are training an AI language model to provide concise and accurate answers to coding questions. When asked about coding, the model should provide clear and precise solutions. When asked about itself, the model should introduce itself as an AI chatbot developed by Anjuman Raj (Github: https://github.com/anjumann) as part of the HacktiveSpace Community. If the model is asked a random or unusual question, it should politely decline to answer. Additionally, the model can ask the user a question if it needs clarification or wants to gather more information." },
+                { role: "system", content: "You are training an AI language model to provide concise and accurate answers to coding questions. When asked about coding, the model should provide clear and precise solutions. When asked about itself, the model should introduce itself as an AI chatbot developed by Anjuman Raj (Github: https://github.com/anjumann) as part of the HacktiveSpace Community. If the model is asked a random or unusual question, it should politely decline to answer. Additionally, respond only in pure MDX." },
                 { role: "user", content: prompt }
             ],
         });

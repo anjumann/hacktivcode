@@ -1,9 +1,16 @@
-import React from 'react'
+'use client'
+import React, { useState } from 'react'
 import { AiOutlineEnter } from 'react-icons/ai'
 import { BsChatRightDots } from 'react-icons/bs'
 import Response from './Response'
-
 const Demo = () => {
+
+
+    const [openaiResponse, setOpenaiRresponse] = useState({
+        data:''
+    })
+
+    const 
     return (
         <section className="mt-16 w-full max-w-xl">
             <div className="flex flex-col w-full gap-2">
@@ -11,11 +18,6 @@ const Demo = () => {
                     className="relative flex justify-center items-center"
                 // onSubmit={handleSubmit}
                 >
-                    {/* <img
-                        src={linkIcon}
-                        alt="link_icon"
-                        className="absolute left-0 my-2 ml-3 w-5"
-                    /> */}
                     <BsChatRightDots
                         className="absolute left-0 my-2 ml-3 w-5"
                     />
@@ -24,17 +26,12 @@ const Demo = () => {
                     <textarea
                         type="url"
                         placeholder="Enter the problem statement here..."
-                        // value={article.url}
-                        // onChange={(e) => setArticle({ ...article, url: e.target.value })}
+                        value={openaiResponse.data}
+                        onChange={(e) => setOpenaiRresponse({ ...openaiResponse, data: e.target.value })}
                         required
                         className="url_input peer"
                     />
-                    <button
-                        type="submit"
-                        className="submit_btn  peer-focus:border-gray-700 peer-focus:text-gray-700 h-fit py-3 align-middle"
-                    >
-                        <AiOutlineEnter className="inline " />
-                    </button>
+                   
                 </form>
                 {/* Browse URL history */}
                 <div className="flex flex-col gap-1 max-h-60 overflow-y-auto">
@@ -84,7 +81,7 @@ const Demo = () => {
                         </div>
                     )
                 )} */}
-                <Response/>
+                <Response data={openaiResponse.data} />
             </div>
         </section>
     )

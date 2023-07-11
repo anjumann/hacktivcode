@@ -1,6 +1,7 @@
 import React from 'react'
 import { AiOutlineEnter } from 'react-icons/ai'
 import { BsChatRightDots } from 'react-icons/bs'
+import Mdx from './mdx'
 
 const Demo = () => {
     return (
@@ -84,7 +85,7 @@ const Demo = () => {
                     )
                 )} */}
 
-                
+                <Mdx />
             </div>
         </section>
     )

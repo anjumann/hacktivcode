@@ -41,7 +41,7 @@ const Chatty = () => {
     return (
         <div className="w-full" >
             <div className="mb-10 flex gap-2 justify-center">
-                <div className="relative w-5/12 z-10  ">
+                <div className="relative w-10/12 md:w-5/12  z-10  ">
                     <label htmlFor="Search" className="sr-only"> Search </label>
 
                     <textarea
@@ -81,7 +81,7 @@ const Chatty = () => {
             </div>
             {
                 !loading ? (
-                    <div className="w-7/12 mx-auto mb-10 px-16 py-6 rounded-xl bg-gray-100/20 card-neuo">
+                    <div className="w-12/12 md:w-10/12 lg:w-7/12 mx-auto mb-10 px-16 py-6 rounded-xl bg-gray-100/20 card-neuo">
                         
 
                             {output?.split('\n').map((item, index) => {

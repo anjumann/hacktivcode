@@ -5,7 +5,7 @@ import Navbar from "@/components/Navbar";
 export default function Home() {
   return (
     <>
-      <div className=" relative bg-gray-200/10">
+      <div className=" relative bg-gray-200/10 transition-colors duration-150 delay-150 ">
 
       <div className="main">
         <div className="gradient-1 -z-10 " />

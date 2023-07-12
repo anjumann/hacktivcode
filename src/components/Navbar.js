@@ -1,33 +1,61 @@
 'use client'
-import { useState } from 'react'
-import {GiNightSky} from 'react-icons/gi'
-import {BsMoon, BsSun} from 'react-icons/bs'
+import { useEffect, useState } from 'react'
+import { BsMoon, BsSun } from 'react-icons/bs'
+import Image from 'next/image'
+import { useTheme } from 'next-themes'
+import LightLogo from '@/assets/light.png'
+import darkLogo from '@/assets/dark.png'
+import Link from 'next/link'
+
 const Navbar = () => {
 
     const [state, setState] = useState(false)
+    const [dark, setDark] = useState(false)
+    const { theme, setTheme } = useTheme()
+    // Replace / path with your path
 
-    // Replace javascript:void(0) path with your path
+
+    const themeSelctor = () => {
+        if (theme === 'light') {
+            setDark(true)
+            setTheme('dark')
+        } else {
+            setDark(false)
+            setTheme('light')
+        }
+    }
+
+
     const navigation = [
-        { title: "Customers", path: "javascript:void(0)" },
-        { title: "Careers", path: "javascript:void(0)" },
-        { title: "Guides", path: "javascript:void(0)" },
-        { title: "Partners", path: "javascript:void(0)" }
+        // { title: "Customers", path: "/" },
+        {
+            title: "Github",
+            url: ""
+        },
+        {
+            title: "Instagram",
+            url: ""
+        },
+
     ]
 
     return (
         <nav className="w-full border-b md:border-0 md:static bg-none ">
             <div className="items-center px-4 max-w-screen-xl mx-auto md:flex md:px-8">
                 <div className="flex items-center justify-between py-3 md:py-5 md:block">
-                    <a href="javascript:void(0)">
-                        <img
-                            src="https://www.floatui.com/logo.svg"
-                            width={120}
-                            height={50}
+                    <a href="/">
+                        <Image
+                            src={!dark ? darkLogo : LightLogo}
+                            width={200}
+                            height={160}
                             alt="Float UI logo"
                         />
                     </a>
-                    <div className="md:hidden">
-                        <button className="text-gray-700 outline-none p-2 rounded-md focus:border-gray-400 focus:border"
+                    <div className="md:hidden flex items-center gap-2 ">
+                        <div className="inline-block cursor-pointer" onClick={themeSelctor} >
+                            <div className='theme-btn  ' > {dark ? (<BsMoon className='inline text-xl cursor-pointer ' />) : (<BsSun className='inline text-xl cursor-pointer ' />)} </div>
+                        </div>
+                        <button className="outline-none px-2.5 py-2 border-2 rounded-lg border-gray-400 text-gray-700 dark:text-gray-200  focus:border-gray-400 focus:border"
                             onClick={() => setState(!state)}
                         >
                             {
@@ -42,26 +70,28 @@ const Navbar = () => {
                                 )
                             }
                         </button>
+
                     </div>
                 </div>
-                <div className={`flex-1 justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 ${state ? 'block' : 'hidden'}`}>
-                    <ul className="justify-center items-center space-y-8 md:flex md:space-x-6 md:space-y-0">
+                <div className={`flex-1 justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 hidden  ${state ? 'block' : 'hidden'}`}>
+                    <ul className="justify-center items-center space-y-8 md:flex md:space-x-6 md:space-y-0  ">
                         {
-                            navigation.map((item, idx) => {
+                            navigation?.map((item, idx) => {
                                 return (
-                                    <li key={idx} className="text-gray-600 hover:text-indigo-600">
-                                        <a href={item.path}>
-                                            {item.title}
-                                        </a>
-                                    </li>
+                                    <Link href={item.url} key={idx} className="dark:text-gray-100 text-gray-950 hover:text-gray-100 ">
+                                        {item.title}
+                                    </Link>
                                 )
                             })
                         }
                     </ul>
+
                 </div>
-                <div className="hidden md:inline-block">
-                    <div className='px-2.5 py-2 border-2 rounded-lg border-gray-200 bg-slate-100 w-fit mx-auto  ' > {true? (<BsMoon className='inline text-xl cursor-pointer ' />):(<BsSun className='inline text-xl cursor-pointer '/>) } </div>
-                </div>
+
+                    
+                    <div className="hidden md:inline-block cursor-pointer" onClick={themeSelctor} >
+                        <div className='theme-btn  ' > {dark ? (<BsMoon className='inline text-xl cursor-pointer ' />) : (<BsSun className='inline text-xl cursor-pointer ' />)} </div>
+                    </div>
             </div>
         </nav>
     )

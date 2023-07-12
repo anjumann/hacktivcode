@@ -1,15 +1,18 @@
-import Demo from "@/components/Demo";
-import Hero from "@/components/Hero";
+import Hero from "@/component/Hero";
+import InputArea from "@/component/InputArea";
+import OpenaiResponse from "@/component/OpenaiResponse";
+
 
 export default function Home() {
   return (
     <main>
-      <div className='main'>
+      <div className=''>
         <div className='gradient' />
       </div>
-      <div className='app'>
+      <div className=''>
         <Hero />
-        <Demo />
+        <InputArea/>
+        <OpenaiResponse prompt='Hello how are you?' />
       </div>
     </main>
   )

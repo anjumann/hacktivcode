@@ -41,7 +41,7 @@ const Navbar = () => {
 
     return (
         <nav className="w-full border-b md:border-0 md:static bg-none ">
-            <div className="items-center px-4 max-w-screen-xl mx-auto md:flex md:px-8">
+            <div className="items-center px-4 max-w-screen-xl mx-auto md:flex md:px-8 justify-between">
                 <div className="flex items-center justify-between py-3 md:py-5 md:block">
                     <a href="/">
                         <Image
@@ -73,25 +73,15 @@ const Navbar = () => {
 
                     </div>
                 </div>
-                <div className={`flex-1 justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 hidden  ${state ? 'block' : 'hidden'}`}>
-                    <ul className="justify-center items-center space-y-8 md:flex md:space-x-6 md:space-y-0  ">
-                        {
-                            navigation?.map((item, idx) => {
-                                return (
-                                    <Link href={item.url} key={idx} className="dark:text-gray-100 text-gray-950 hover:text-gray-100 ">
-                                        {item.title}
-                                    </Link>
-                                )
-                            })
-                        }
-                    </ul>
 
-                </div>
 
-                    
+                <div className="flex gap-4 justify-center items-center">
+                    <div className=""> Instagram </div>
+                    <div className=""> Github</div>
                     <div className="hidden md:inline-block cursor-pointer" onClick={themeSelctor} >
                         <div className='theme-btn  ' > {dark ? (<BsMoon className='inline text-xl cursor-pointer ' />) : (<BsSun className='inline text-xl cursor-pointer ' />)} </div>
                     </div>
+                </div>
             </div>
         </nav>
     )

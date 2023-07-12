@@ -1,4 +1,0 @@
-```bash
-jsx\nimport React, { useEffect, useState } from 'react';\n\nconst MyComponent = () => {\n  const [data, setData] = useState(null);\n\n  useEffect(() => {\n    const fetchData = async () => {\n      try {\n        const response = await fetch('https://api.example.com/data');\n        const jsonData = await response.json();\n        setData(jsonData);\n      } catch (error) {\n        console.log('Error:', error);\n      }\n    };\n\n    fetchData();\n  }, []);\n\n  return (\n    <div>\n      {data ? (\n        <ul>\n          {data.map((item) => (\n            <li key={item.id}>{item.name}</li>\n          ))}\n        </ul>\n      ) : (\n        <p>Loading data...</p>\n      )}\n    </div>\n  );\n};\n\nexport default MyComponent;\n
-
-```

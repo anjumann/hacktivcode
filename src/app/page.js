@@ -1,19 +1,21 @@
-import Hero from "@/component/Hero";
-import InputArea from "@/component/InputArea";
-import OpenaiResponse from "@/component/OpenaiResponse";
-
+import Chatty from "@/components/Chatty";
+import Hero from "@/components/Hero";
 
 export default function Home() {
   return (
-    <main>
-      <div className=''>
-        <div className='gradient' />
+    <>
+      <div className=" relative bg-gray-200/10">
+
+      <div className="main">
+        <div className="gradient-1 -z-10 " />
+        <div>
+          <Hero />
+        </div>
+        <div className="w-full" >
+          <Chatty/>
+        </div>
       </div>
-      <div className=''>
-        <Hero />
-        <InputArea/>
-        <OpenaiResponse prompt='Hello how are you?' />
       </div>
-    </main>
+    </>
   )
 }

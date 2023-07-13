@@ -75,9 +75,9 @@ const Chatty = () => {
                         </button>
                     </span>
                 </div>
-                <span className={` inline rounded-xl mx-2px my-2 px-1 hover:cursor-pointer ${loading ? 'cursor-wait' : 'cursor-pointer'} `}>
+                <button onClick={handleSubmit}  className={` inline rounded-xl mx-2px my-2 px-1 hover:cursor-pointer ${loading ? 'cursor-wait' : 'cursor-pointer'} `}  >
                     <AiOutlineSend className="text-2xl inline" />
-                </span>
+                </button>
             </div>
             {
                 !loading ? (

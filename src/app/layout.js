@@ -5,15 +5,15 @@ import { Inter } from 'next/font/google'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'Hacktive Code',
-  description: 'code, design, and coffee',
+  title: 'Hacktiv Code',
+  description: 'Code, Design, and Coffee',
 }
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className = 'zero'>
       <body className={inter.className}>
-        <Providers>
+        <Providers >
           {children}
         </Providers>
 

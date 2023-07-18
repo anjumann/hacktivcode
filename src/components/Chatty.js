@@ -41,7 +41,7 @@ const Chatty = () => {
     return (
         <div className="w-full" >
             <div className="mb-10 flex gap-2 justify-center">
-                <div className="relative w-10/12 md:w-5/12  z-10  ">
+                <div className="relative w-10/12 md:w-7/12 xl:w-6/12 z-10  ">
                     <label htmlFor="Search" className="sr-only"> Search </label>
 
                     <textarea
@@ -51,7 +51,7 @@ const Chatty = () => {
                         onInput={handleInput}
                         rows={calculateRows(inputValue)}
                         onKeyDown={handleKeyDown}
-                        className="w-full rounded-md border-gray-200 px-2 py-2.5 pe-10 shadow-sm sm:text-sm focus:border-0"
+                        className="w-full rounded-md border-gray-200 px-2 py-2 pe-10 shadow-sm sm:text-sm focus:border-0"
                     />
 
                     <span className="absolute inset-y-0 end-0 grid w-10 place-content-center">
@@ -79,9 +79,10 @@ const Chatty = () => {
                     <AiOutlineSend className="text-2xl inline" />
                 </button>
             </div>
-            {
-                !loading ? (
-                    <div className="w-12/12 md:w-10/12 lg:w-7/12 mx-auto mb-10 px-16 py-6 rounded-xl bg-gray-100/20 card-neuo">
+            
+                {output?(
+                    !loading ? (
+                    <div className="w-12/12 md:w-10/12 lg:w-7/12 mx-auto mb-10 px-6 py-6 rounded-sm bg-gray-100/20 card-neuo">
                         
 
                             {output?.split('\n').map((item, index) => {
@@ -96,7 +97,9 @@ const Chatty = () => {
                         <Loader />
                     )
 
-            }
+                ):(<p></p>)}
+            
+            
         </div >
     )
 }

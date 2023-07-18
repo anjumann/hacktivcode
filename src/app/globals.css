@@ -35,10 +35,10 @@
 .card-neuo {
   border-radius: 20px;
   background: linear-gradient(145deg, #cacaca73, #f0f0f089);
-  box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+  /* box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff; */
   @apply  dark:shadow-none dark:bg-gray-950 dark:text-gray-50 
 }
 
 .theme-btn{
-  @apply px-2.5 py-2 border-2 rounded-lg w-fit mx-auto border-gray-400 text-gray-700 dark:text-gray-200 
+  @apply px-2.5 py-2  rounded-lg w-fit mx-auto text-gray-700 dark:text-gray-200;
 }

@@ -8,15 +8,14 @@ const Hero = () => {
                 >
                     <div className="mx-auto max-w-xl text-center">
                         <h1 className="text-3xl font-extrabold sm:text-5xl">
-                            Understand User Flow.
-                            <strong className="font-extrabold text-red-700 sm:block">
-                                Increase Conversion.
+                                Crack the Code with 
+                            <strong className="font-extrabold bg-gradient-to-r from-cyan-300 via-sky-500 to-blue-300 inline-block text-transparent bg-clip-text sm:block">
+                                Our AI Chatbot!
                             </strong>
                         </h1>
 
-                        <p className="mt-4 sm:text-lg/relaxed">
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt illo
-                            tenetur fuga ducimus numquam ea!
+                        <p className="mt-4 sm:text-lg/relaxed md:text-md/relaxed text-sm">
+                            Whether you are a seasoned developer or just starting your coding adventure, HactivCode Bot is here to empower you at every step.
                         </p>
 
                       

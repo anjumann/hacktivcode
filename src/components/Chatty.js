@@ -9,6 +9,7 @@ const Chatty = () => {
     const [output, setOutput] = useState('');
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(false);
+    const [state, setState] = useState(false)
     const handleInput = (event) => {
         setInputValue(event.target.value);
     };
@@ -20,6 +21,7 @@ const Chatty = () => {
 
     const handleSubmit = async () => {
         setLoading(true);
+        setState(true)
         const { data, error } = await response({ prompt: inputValue })
         if (error) {
             setError(error);
@@ -28,7 +30,6 @@ const Chatty = () => {
         }
         setOutput(data);
         setLoading(false);
-
     }
 
     const handleKeyDown = (event) => {
@@ -75,31 +76,31 @@ const Chatty = () => {
                         </button>
                     </span>
                 </div>
-                <button onClick={handleSubmit}  className={` inline rounded-xl mx-2px my-2 px-1 hover:cursor-pointer ${loading ? 'cursor-wait' : 'cursor-pointer'} `}  >
+                <button onClick={handleSubmit} className={` inline rounded-xl mx-2px my-2 px-1 hover:cursor-pointer ${loading ? 'cursor-wait' : 'cursor-pointer'} `}  >
                     <AiOutlineSend className="text-2xl inline" />
                 </button>
             </div>
-            
-                {output?(
-                    !loading ? (
-                    <div className="w-12/12 md:w-10/12 lg:w-7/12 mx-auto mb-10 px-6 py-6 rounded-sm bg-gray-100/20 card-neuo">
-                        
 
-                            {output?.split('\n').map((item, index) => {
-                                return (
-                                    <p key={index} >{item} <br /> </p>
-                                )
-                            })}
-                        
+            {state ? (
+                !loading ? (
+                    <div className="w-12/12 md:w-10/12 lg:w-7/12 mx-auto mb-10 px-6 py-6 rounded-sm bg-gray-100/20 card-neuo">
+
+
+                        {output?.split('\n').map((item, index) => {
+                            return (
+                                <p key={index} >{item} <br /> </p>
+                            )
+                        })}
+
                     </div>
                 ) :
                     (
                         <Loader />
                     )
 
-                ):(<p></p>)}
-            
-            
+            ) : (<p></p>)}
+
+
         </div >
     )
 }
